@@ -12,6 +12,8 @@ import org.json.JSONObject;
 //The LOQR API
 import io.loqr.loqrCMSDK.Loqr;
 import io.loqr.loqrCMSDK.*;
+import io.loqr.loqrOMSDK.*;
+import io.loqr.loqrDAMSDK.*;
 
 //Permissions
 import android.support.v4.app.ActivityCompat;
