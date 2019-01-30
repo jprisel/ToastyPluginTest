@@ -35,8 +35,10 @@ public class ToastyPlugin extends CordovaPlugin {
       }
       
      // Create the toast
-      Toast toast = Toast.makeText(cordova.getActivity(), "Estou no catch",
+      Toast toast = Toast.makeText(cordova.getActivity(), "Vou tentar chamar o Loqr",
         DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
+       // Display toast
+        toast.show();
       
       try {
           new Loqr(cordova.getActivity()).initLoqr("LOQR_DEMO_ID", "LOQR_DEMO_KEY", "OLA", new OnLoqrRequestListener() {
@@ -44,9 +46,12 @@ public class ToastyPlugin extends CordovaPlugin {
         public void loqrResponse(int requestCode, String message, Boolean status) {
             if (status)
                 message = "FUNCIONOU!!";
-            else
-                message = "NÂO FUNCIONOU";
+            
              
+            // Create the toast
+        Toast toast2 = Toast.makeText(cordova.getActivity(), message,
+        DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
+             toast2.show();
          }
               
         },
