@@ -34,6 +34,22 @@ public class ToastyPlugin extends CordovaPlugin {
         return false;
       }
       
+      
+      if (!Loqr.permissionsChecked(cordova.getActivity())) {
+            // Create the toast
+        Toast toast3 = Toast.makeText(cordova.getActivity(), "nao tenho permissões, vou pedir",
+        Toast.LENGTH_LONG);
+       // Display toast
+        toast3.show();
+          ActivityCompat.requestPermissions(cordova.getActivity(),
+                new String[]{Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.ACCESS_FINE_LOCATION},
+                27 //use a unique code to distinguish the request results
+     );
+    }
+ 
+    
+      
      // Create the toast
       Toast toast = Toast.makeText(cordova.getActivity(), "Vou tentar chamar o Loqr",
         DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
