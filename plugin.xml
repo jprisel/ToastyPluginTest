@@ -21,7 +21,7 @@ id="cordova-plugin-toastyplugin" version="0.0.1">
                 <param name="android-package" value="com.stanleyidesis.cordova.plugin.ToastyPlugin"/>
             </feature>
         </config-file>
-        <config-file target="AndroidManifest.xml" parent="/*">
+        <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.READ_PHONE_STATE" />
             <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         </config-file>
