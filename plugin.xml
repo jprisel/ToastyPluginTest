@@ -30,6 +30,9 @@ id="cordova-plugin-toastyplugin" version="0.0.1">
         <framework src="src/android/loqr.gradle" custom="true" type="gradleReference" />
         <resource-file src="src/android/libs/LoqrCMSDK.aar" target="libs/LoqrCMSDK.aar" />
         <resource-file src="src/android/libs/LoqrOMSDK.aar" target="libs/LoqrOMSDK.aar" />
+        <resource-file src="src/android/libs/LoqrDAMSDK.aar" target="libs/LoqrDAMSDK.aar" />
+        <resource-file src="src/android/libs/document-api-2.0.2.aar" target="libs/document-api-2.0.2.aar" />
+        <resource-file src="src/android/libs/document-reader-1.1.073.aar" target="libs/document-reader-1.1.073.aar" />
         <resource-file src="src/android/assets/LoqrConfig" target="assets/LoqrConfig" />
     </platform>
 </plugin>
