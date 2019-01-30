@@ -44,9 +44,11 @@ public class ToastyPlugin extends CordovaPlugin {
         public void loqrResponse(int requestCode, String message, Boolean status) {
             if (status)
                 message = "FUNCIONOU!!";
-         else
+            else
                 message = "NÂO FUNCIONOU";
+             
          }
+              
         },
         0); //use a unique code to distinguish the request results
       }
@@ -57,7 +59,7 @@ public class ToastyPlugin extends CordovaPlugin {
         
       }
       
-      toast = Toast.makeText(cordova.getActivity(), "consegui chamar",
+      toast = Toast.makeText(cordova.getActivity(), message,
         DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
        
       // Display toast
