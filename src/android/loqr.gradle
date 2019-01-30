@@ -1,0 +1,44 @@
+repositories{    
+  jcenter()
+  flatDir {
+      dirs 'libs'
+   }
+}
+
+dependencies {
+   
+    implementation 'com.google.zxing:core:3.2.1' //QRCode
+    implementation 'com.android.support:design:27.1.0' //Camera
+    implementation 'com.google.android.gms:play-services:11.8.0' //Google Play Services
+    implementation 'com.android.support:support-v4:27.1.0' //Google Support
+    implementation 'com.madgag.spongycastle:prov:1.54.0.0' //Crypto
+    implementation 'com.rollbar:rollbar-android:0.2.1' //Error Handling
+    implementation('io.socket:socket.io-client:1.0.0') { //Socket Communication
+        exclude group: 'org.json', module: 'json'
+    }
+    compile(name:'LoqrCMSDK', ext:'aar')
+    
+    
+}
+
+android {
+  
+  packagingOptions {
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+  }
+  splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi-v7a', 'x86_64'
+            
+        }
+  }
+  defaultConfig {
+        ndk {
+                abiFilters "armeabi-v7a", "x86", "armeabi", "mips"
+            }
+     multiDexEnabled true
+  }
+}

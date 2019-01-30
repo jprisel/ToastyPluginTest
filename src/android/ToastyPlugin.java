@@ -8,6 +8,11 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+//The LOQR API
+import io.loqr.loqrCMSDK.Loqr;
+import io.loqr.loqrCMSDK.*;
+
 public class ToastyPlugin extends CordovaPlugin {
   private static final String DURATION_LONG = "long";
   @Override
@@ -28,11 +33,42 @@ public class ToastyPlugin extends CordovaPlugin {
         callbackContext.error("Error encountered: " + e.getMessage());
         return false;
       }
-      // Create the toast
-      Toast toast = Toast.makeText(cordova.getActivity(), message,
+      
+     // Create the toast
+      Toast toast = Toast.makeText(cordova.getActivity(), "Estou no catch",
         DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
+      
+      try {
+          new Loqr(cordova.getActivity()).initLoqr("LOQR_DEMO_ID", "LOQR_DEMO_KEY", "OLA", new OnLoqrRequestListener() {
+        @Override
+        public void loqrResponse(int requestCode, String message, Boolean status) {
+            if (status)
+                message = "FUNCIONOU!!";
+         else
+                message = "NÂO FUNCIONOU";
+         }
+        },
+        0); //use a unique code to distinguish the request results
+      }
+      catch (Exception e) {
+         // Display toast
+        toast.show();
+       
+        
+      }
+      
+      toast = Toast.makeText(cordova.getActivity(), "consegui chamar",
+        DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
+       
       // Display toast
       toast.show();
+      
+      // Create the toast
+      //Toast toast = Toast.makeText(cordova.getActivity(), message,
+        //DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
+      // Display toast
+      //toast.show();
+      
       // Send a positive result to the callbackContext
       PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
       callbackContext.sendPluginResult(pluginResult);
