@@ -24,6 +24,6 @@ id="cordova-plugin-toastyplugin" version="0.0.1">
         <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/stanleyidesis/cordova/plugin" />
         <framework src="src/android/loqr.gradle" custom="true" type="gradleReference" />
         <resource-file src="src/android/libs/LoqrCMSDK.aar" target="libs/LoqrCMSDK.aar" />
-        <resource-file src="src/android/assets/LoqrConfig.dms" target="assets/LoqrConfig.dms" />
+        <resource-file src="src/android/assets/LoqrConfig" target="assets/LoqrConfig" />
     </platform>
 </plugin>
