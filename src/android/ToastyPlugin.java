@@ -13,6 +13,12 @@ import org.json.JSONObject;
 import io.loqr.loqrCMSDK.Loqr;
 import io.loqr.loqrCMSDK.*;
 
+//Permissions
+import android.support.v4.app.ActivityCompat;
+import android.Manifest;
+
+
+
 public class ToastyPlugin extends CordovaPlugin {
   private static final String DURATION_LONG = "long";
   @Override
