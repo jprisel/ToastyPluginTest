@@ -49,9 +49,8 @@ public class ToastyPlugin extends CordovaPlugin {
             
              
             // Create the toast
-        Toast toast2 = Toast.makeText(cordova.getActivity(), message,
-        DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
-             toast2.show();
+        Toast toast2 = Toast.makeText(cordova.getActivity(), message, Toast.LENGTH_LONG);
+        toast2.show();
          }
               
         },
