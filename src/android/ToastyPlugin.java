@@ -138,10 +138,7 @@ public class ToastyPlugin extends CordovaPlugin {
             String aux = "OLEEE";
         }
 
-        @Override
-        public void onError(LoqrException e) {
-            String aux = "Fail";
-        }
+        
         });
     }
 }
