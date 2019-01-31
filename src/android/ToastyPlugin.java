@@ -15,7 +15,7 @@ import io.loqr.loqrCMSDK.Loqr;
 import io.loqr.loqrCMSDK.LoqrException;
 import io.loqr.loqrCMSDK.*;
 import io.loqr.loqrOMSDK.*;
-import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
+import io.loqr.loqrOMSDK.utils.*;
 
 
 //Permissions
