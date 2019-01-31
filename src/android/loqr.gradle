@@ -19,16 +19,7 @@ dependencies {
     compile(name:'LoqrCMSDK', ext:'aar')
     
     
-    
-    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
-    compile(name:'LoqrOMSDK', ext:'aar')
-    
-    
-    
-    implementation 'com.google.android.gms:play-services-vision:17.0.2' //Facial Detection
-    implementation 'com.android.support:multidex:1.0.2'
    
-    compile(name:'LoqrDAMSDK', ext:'aar')
     
     
 }
