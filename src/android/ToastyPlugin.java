@@ -67,10 +67,11 @@ public class ToastyPlugin extends CordovaPlugin {
           new Loqr(cordova.getActivity()).initLoqr("LOQR_DEMO_ID", "LOQR_DEMO_KEY", "OLA", new OnLoqrRequestListener() {
         @Override
         public void loqrResponse(int requestCode, String message, Boolean status) {
-            if (status)
-                message = "FUNCIONOU!!";
-            
-             
+            if (status) {
+                 message = "FUNCIONOU!!";
+                 CreateOnboarding(cordova.getActivity());
+            }
+
             // Create the toast
         Toast toast2 = Toast.makeText(cordova.getActivity(), message, Toast.LENGTH_LONG);
         toast2.show();
@@ -103,4 +104,37 @@ public class ToastyPlugin extends CordovaPlugin {
       callbackContext.sendPluginResult(pluginResult);
       return true;
   }
+    private static void CreateOnboarding (Context contex)
+    {
+        // Create the toast
+        Toast toast = Toast.makeText(context, "Vou criar o onboarding",
+        Toast.LENGTH_LONG);
+       // Display toast
+        toast.show();
+        
+        JSONObject customData = new JSONObject().put("email", email).put("shortName", name).put("acceptPrivacyPolicy", true);
+
+        LoqrOnBoarding onBoarding = new LoqrOnBoarding(contex);
+
+        onBoarding.createProcess("+351", "900000000", customData, new OnLoqrOnboardingResult() {
+        @Override
+        public void onCompleted() {
+            // Create the toast
+            Toast toast2 = Toast.makeText(context, "Consegui criar o onboarding",
+            Toast.LENGTH_LONG);
+        // Display toast
+            toast2.show();
+     }
+
+        @Override
+        public void onError(LoqrException e) {
+            Log.d(TAG, "onError: " + e.getMessage() + "" + e.getErrorCode().toString());
+            // Create the toast
+            Toast toast2 = Toast.makeText(context, "Tive errro"+ e.getErrorCode().toString(),
+            Toast.LENGTH_LONG);
+        // Display toast
+            toast2.show();
+        }
+    });
+    }
 }

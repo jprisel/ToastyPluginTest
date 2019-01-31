@@ -18,7 +18,6 @@ dependencies {
         exclude group: 'org.json', module: 'json'
     }
     compile(name:'LoqrCMSDK', ext:'aar')
-    implementation 'com.google.android.gms:play-services-vision:17.0.2' //Facial Detection
 
 }
 
