@@ -56,18 +56,27 @@
 
                     }
                       else {
-                          switch (action) {
-                          case "show":
-                              show(cordova.getActivity(), message);
+                          
+                          if(action.equals("show"))
+                          {
+                              show(cordova.getActivity(), message,duration);
                               break;
-                          case "initLoqr":
+                          }
+                          else if(action.equals("initLoqr"))
+                          {
                               initLoqr(cordova.getActivity());
                               break;
-                          default:
+                          }
+                          else {
                               callbackContext.error("\"" + action + "\" is not a recognized action.");
                               return false;
-                      }
                           }
+                              
+                          
+                          
+                          
+                          
+                         
 
 
 
@@ -125,7 +134,7 @@
                     private static void initLoqr(Context context)
                     {
                         // Create the toast
-                        Toast toast = Toast.makeText(cordova.getActivity(), "Vou tentar chamar o Loqr", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(context, "Vou tentar chamar o Loqr", Toast.LENGTH_LONG);
                        // Display toast
                         toast.show();
 
