@@ -63,7 +63,7 @@ public class ToastyPlugin extends CordovaPlugin {
        // Display toast
         toast.show();
       
-        callLoqr();
+        callLoqr(cordova.getActivity());
       
       toast = Toast.makeText(cordova.getActivity(), message,
         DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
@@ -83,7 +83,7 @@ public class ToastyPlugin extends CordovaPlugin {
       return true;
   }
     
-    public static void callLoqr()
+    public static void callLoqr(Context contex)
     {
         try {
           new Loqr(cordova.getActivity()).initLoqr("LOQR_DEMO_ID", "LOQR_DEMO_KEY", "OLA", new OnLoqrRequestListener() {
@@ -94,7 +94,7 @@ public class ToastyPlugin extends CordovaPlugin {
             
              
             // Create the toast
-        Toast toast2 = Toast.makeText(cordova.getActivity(), message, Toast.LENGTH_LONG);
+        Toast toast2 = Toast.makeText(contex, message, Toast.LENGTH_LONG);
         toast2.show();
          }
               
@@ -103,7 +103,7 @@ public class ToastyPlugin extends CordovaPlugin {
       }
       catch (Exception e) {
             // Create the toast
-        Toast toast3 = Toast.makeText(cordova.getActivity(), "Vim parar ao Catch", Toast.LENGTH_LONG);
+        Toast toast3 = Toast.makeText(contex, "Vim parar ao Catch", Toast.LENGTH_LONG);
         toast3.show();
        
         
