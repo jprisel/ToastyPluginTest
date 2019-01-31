@@ -141,7 +141,7 @@ public class ToastyPlugin extends CordovaPlugin {
         }
 
         
-        }
+        };
 
         LoqrOnBoarding onBoarding = new LoqrOnBoarding(context);
         onBoarding.createProcess("+351", "912992454", customData, onboardingResult);
