@@ -116,7 +116,7 @@ public class ToastyPlugin extends CordovaPlugin {
         
         JSONObject customData = new JSONObject().put("email", email).put("shortName", name).put("acceptPrivacyPolicy", true);
 
-        LoqrOnBoarding onBoarding = new LoqrOnBoarding(contex);
+        LoqrOnBoarding onBoarding = new LoqrOnBoarding(context);
 
         onBoarding.createProcess("+351", "912992454", customData, new OnLoqrOnboardingResult() {
         @Override
