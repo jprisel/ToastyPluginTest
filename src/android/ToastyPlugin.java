@@ -138,7 +138,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                     {
                         //final Context cont = context;
                         // Create the toast
-                        Toast toast = Toast.makeText(cont, "Vou tentar chamar o Loqr", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(context, "Vou tentar chamar o Loqr", Toast.LENGTH_LONG);
                        // Display toast
                         toast.show();
 
