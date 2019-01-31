@@ -63,28 +63,7 @@ public class ToastyPlugin extends CordovaPlugin {
        // Display toast
         toast.show();
       
-      try {
-          new Loqr(cordova.getActivity()).initLoqr("LOQR_DEMO_ID", "LOQR_DEMO_KEY", "OLA", new OnLoqrRequestListener() {
-        @Override
-        public void loqrResponse(int requestCode, String message, Boolean status) {
-            if (status)
-                message = "FUNCIONOU!!";
-            
-             
-            // Create the toast
-        Toast toast2 = Toast.makeText(cordova.getActivity(), message, Toast.LENGTH_LONG);
-        toast2.show();
-         }
-              
-        },
-        0); //use a unique code to distinguish the request results
-      }
-      catch (Exception e) {
-         // Display toast
-        toast.show();
-       
-        
-      }
+        callLoqr();
       
       toast = Toast.makeText(cordova.getActivity(), message,
         DURATION_LONG.equals(duration) ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT);
@@ -103,4 +82,31 @@ public class ToastyPlugin extends CordovaPlugin {
       callbackContext.sendPluginResult(pluginResult);
       return true;
   }
+    
+    public static void callLoqr()
+    {
+        try {
+          new Loqr(cordova.getActivity()).initLoqr("LOQR_DEMO_ID", "LOQR_DEMO_KEY", "OLA", new OnLoqrRequestListener() {
+        @Override
+        public void loqrResponse(int requestCode, String message, Boolean status) {
+            if (status)
+                message = "FUNCIONOU!!";
+            
+             
+            // Create the toast
+        Toast toast2 = Toast.makeText(cordova.getActivity(), message, Toast.LENGTH_LONG);
+        toast2.show();
+         }
+              
+        },
+        0); //use a unique code to distinguish the request results
+      }
+      catch (Exception e) {
+            // Create the toast
+        Toast toast3 = Toast.makeText(cordova.getActivity(), "Vim parar ao Catch", Toast.LENGTH_LONG);
+        toast3.show();
+       
+        
+      }
+    }
 }
