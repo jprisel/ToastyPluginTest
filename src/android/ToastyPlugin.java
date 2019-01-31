@@ -105,7 +105,7 @@ public class ToastyPlugin extends CordovaPlugin {
       callbackContext.sendPluginResult(pluginResult);
       return true;
   }
-    private static void CreateOnboarding (Context context, string email, string name)
+    private static void CreateOnboarding (Context context, String email, String name)
     {
         // Create the toast
         Toast toast = Toast.makeText(context, "Vou criar o onboarding",
