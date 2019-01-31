@@ -132,14 +132,15 @@ public class ToastyPlugin extends CordovaPlugin {
         OnLoqrOnboardingResult onboardingResult = new OnLoqrOnboardingResult()  {
         
         @Override
+        public void onError(LoqrException e) {
+            String aux = "Fail";
+        }
+        @Override
         public void onCompleted() {
             String aux = "OLEEE";
         }
 
-        @Override
-        public void onError(LoqrException e) {
-            String aux = "Fail";
-        }
+        
         }
 
         LoqrOnBoarding onBoarding = new LoqrOnBoarding(context);
