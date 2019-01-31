@@ -70,7 +70,7 @@ public class ToastyPlugin extends CordovaPlugin {
         public void loqrResponse(int requestCode, String message, Boolean status) {
             if (status) {
                  message = "FUNCIONOU!!";
-                 CreateOnboarding(cordova.getActivity());
+                 CreateOnboarding(cordova.getActivity(), "joao.rodrigues@infosistema.com", "Joao Rodrigues");
             }
 
             // Create the toast
@@ -105,7 +105,7 @@ public class ToastyPlugin extends CordovaPlugin {
       callbackContext.sendPluginResult(pluginResult);
       return true;
   }
-    private static void CreateOnboarding (Context context)
+    private static void CreateOnboarding (Context context, string email, string name)
     {
         // Create the toast
         Toast toast = Toast.makeText(context, "Vou criar o onboarding",
@@ -117,7 +117,7 @@ public class ToastyPlugin extends CordovaPlugin {
 
         LoqrOnBoarding onBoarding = new LoqrOnBoarding(contex);
 
-        onBoarding.createProcess("+351", "900000000", customData, new OnLoqrOnboardingResult() {
+        onBoarding.createProcess("+351", "912992454", customData, new OnLoqrOnboardingResult() {
         @Override
         public void onCompleted() {
             // Create the toast
