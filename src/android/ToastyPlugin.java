@@ -1,6 +1,7 @@
 package com.stanleyidesis.cordova.plugin;
 // The native Toast API
 import android.widget.Toast;
+import android.content.Context;
 // Cordova-required packages
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
