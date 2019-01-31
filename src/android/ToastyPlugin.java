@@ -60,17 +60,18 @@
                           if(action.equals("show"))
                           {
                               show(cordova.getActivity(), message,duration);
-                              break;
+                             
                           }
                           else if(action.equals("initLoqr"))
                           {
                               initLoqr(cordova.getActivity());
-                              break;
+                              
                           }
                           else {
                               callbackContext.error("\"" + action + "\" is not a recognized action.");
                               return false;
                           }
+                      }
                               
                           
                           
