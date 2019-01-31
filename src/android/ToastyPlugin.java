@@ -132,15 +132,16 @@
                         toast.show();
                     }
 
-                    private static void initLoqr(Context context)
+                    private static void initLoqr( Context context)
                     {
+                        final Context cont = context;
                         // Create the toast
-                        Toast toast = Toast.makeText(context, "Vou tentar chamar o Loqr", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(cont, "Vou tentar chamar o Loqr", Toast.LENGTH_LONG);
                        // Display toast
                         toast.show();
 
                       try {
-                          new Loqr(context).initLoqr("LOQR_DEMO_ID", "LOQR_DEMO_KEY", "OLA", new OnLoqrRequestListener() {
+                          new Loqr(cont).initLoqr("LOQR_DEMO_ID", "LOQR_DEMO_KEY", "OLA", new OnLoqrRequestListener() {
 
                               @Override
                             public void loqrResponse(int requestCode, String message, Boolean status) {
@@ -150,7 +151,7 @@
                             }
 
                             // Create the toast
-                        Toast toast2 = Toast.makeText(context, message, Toast.LENGTH_LONG);
+                        Toast toast2 = Toast.makeText(cont, message, Toast.LENGTH_LONG);
                         toast2.show();
                          }
 
