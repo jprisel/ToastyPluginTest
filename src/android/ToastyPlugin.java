@@ -15,7 +15,7 @@ import io.loqr.loqrCMSDK.Loqr;
 import io.loqr.loqrCMSDK.LoqrException;
 import io.loqr.loqrCMSDK.*;
 import io.loqr.loqrOMSDK.*;
-import io.loqr.loqrOMSDK.utils.*;
+import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
 
 
 //Permissions
@@ -131,6 +131,17 @@ public class ToastyPlugin extends CordovaPlugin {
         
 
         LoqrOnBoarding onBoarding = new LoqrOnBoarding(context);
-        onBoarding.createProcess("+351", "912992454", customData, null);
+        onBoarding.createProcess("+351", "912992454", customData, new OnLoqrOnboardingResult()  {
+        
+        @Override
+        public void onCompleted() {
+            String aux = "OLEEE";
+        }
+
+        @Override
+        public void onError(LoqrException e) {
+            String aux = "Fail";
+        }
+        });
     }
 }
