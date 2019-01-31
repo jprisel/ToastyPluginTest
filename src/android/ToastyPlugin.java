@@ -12,9 +12,10 @@ import org.json.JSONObject;
 
 //The LOQR API
 import io.loqr.loqrCMSDK.Loqr;
+import io.loqr.loqrCMSDK.LoqrException;
 import io.loqr.loqrCMSDK.*;
 import io.loqr.loqrOMSDK.*;
-import io.loqr.loqrOMSDK.LoqrOnBoarding;
+import io.loqr.loqrOMSDK.utils.*;
 
 
 //Permissions
@@ -107,7 +108,7 @@ public class ToastyPlugin extends CordovaPlugin {
       callbackContext.sendPluginResult(pluginResult);
       return true;
   }
-    private static void CreateOnboarding (Context context, String email, String name)
+    private static void CreateOnboarding (Context context, String email, String name) 
     {
         // Create the toast
         Toast toast = Toast.makeText(context, "Vou criar o onboarding",
@@ -115,28 +116,21 @@ public class ToastyPlugin extends CordovaPlugin {
        // Display toast
         toast.show();
         
-        JSONObject customData = new JSONObject().put("email", email).put("shortName", name).put("acceptPrivacyPolicy", true);
+        JSONObject customData = null;
+        try {
+            customData = new JSONObject().put("email", email).put("shortName", name).put("acceptPrivacyPolicy", true);
+        }  catch (Exception e) {
+        // Create the toast
+        Toast toast5 = Toast.makeText(context, "Vou criar o onboarding",
+        Toast.LENGTH_LONG);
+       // Display toast
+        toast5.show();
+        
+        
+      }
+        
 
         LoqrOnBoarding onBoarding = new LoqrOnBoarding(context);
-        onBoarding.createProcess("+351", "912992454", customData, new OnLoqrOnboardingResult() {
-        @Override
-        public void onCompleted() {
-            // Create the toast
-            Toast toast2 = Toast.makeText(context, "Consegui criar o onboarding",
-            Toast.LENGTH_LONG);
-        // Display toast
-            toast2.show();
-     }
-
-        @Override
-        public void onError(LoqrException e) {
-            Log.d(TAG, "onError: " + e.getMessage() + "" + e.getErrorCode().toString());
-            // Create the toast
-            Toast toast2 = Toast.makeText(context, "Tive errro"+ e.getErrorCode().toString(),
-            Toast.LENGTH_LONG);
-        // Display toast
-            toast2.show();
-        }
-    });
+        onBoarding.createProcess("+351", "912992454", customData, null);
     }
 }
