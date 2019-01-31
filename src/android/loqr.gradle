@@ -18,6 +18,7 @@ dependencies {
         exclude group: 'org.json', module: 'json'
     }
     compile(name:'LoqrCMSDK', ext:'aar')
+    compile(name:'LoqrOMSDK', ext:'aar')
 
 }
 
