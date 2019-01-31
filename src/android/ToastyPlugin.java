@@ -11,11 +11,13 @@
                 import org.json.JSONObject;
 
                 //The LOQR API
-                import io.loqr.loqrCMSDK.Loqr;
-                import io.loqr.loqrCMSDK.LoqrException;
-                import io.loqr.loqrCMSDK.*;
-                import io.loqr.loqrOMSDK.*;
-                import io.loqr.loqrOMSDK.utils.*;
+import io.loqr.loqrCMSDK.Loqr;
+import io.loqr.loqrCMSDK.OnLoqrRequestListener;
+import io.loqr.loqrCMSDK.error.LoqrException;
+import io.loqr.loqrOMSDK.LoqrOnBoarding;
+import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
+
+
 
 
                 //Permissions
@@ -85,7 +87,7 @@
                       callbackContext.sendPluginResult(pluginResult);
                       return true;
                   }
-                    /*
+                    
                     private static void CreateOnboarding (Context context, String email, String name) 
                     {
                         // Create the toast
@@ -124,7 +126,7 @@
                         onBoarding.createProcess("+351", "912992454", customData, onboardingResult);
                     }
 
-                    */
+                    
                     private static void show(Context context, String message, String duration) {
                         // Create the toast
                         Toast toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
