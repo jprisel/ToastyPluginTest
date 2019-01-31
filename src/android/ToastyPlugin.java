@@ -13,6 +13,7 @@ import org.json.JSONObject;
 //The LOQR API
 import io.loqr.loqrCMSDK.Loqr;
 import io.loqr.loqrCMSDK.*;
+import io.loqr.loqrOMSDK.*;
 
 
 //Permissions
