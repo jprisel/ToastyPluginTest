@@ -132,7 +132,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
 
                         @Override
                         public void onError(LoqrException e) {
-                            String aux = "Fail";
+                            String aux = e.toString();
                              // Create the toast
                         Toast toast5 = Toast.makeText(context, aux,
                         Toast.LENGTH_LONG);
