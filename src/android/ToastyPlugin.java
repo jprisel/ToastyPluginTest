@@ -30,6 +30,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                   
                   private static final String DURATION_LONG = "long";
                   private  Context context;
+                    private LoqrOnBoarding onBoarding = null;
                   
                     @Override
                   public boolean execute(String action, JSONArray args,
@@ -83,6 +84,11 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                                initLoqr();
                               
                           }
+                          else if(action.equals("createOnboarding"))
+                          {
+                              createOnboarding("joao.rodrigues@infosistema.com", "Joao Rodrigues");
+                              
+                          }
                           else {
                               callbackContext.error("\"" + action + "\" is not a recognized action.");
                               return false;
@@ -102,7 +108,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                       return true;
                   }
                     
-                    private  void CreateOnboarding (String email, String name) 
+                    private  void createOnboarding (String email, String name) 
                     {
                         // Create the toast
                         Toast toast = Toast.makeText(context, "Vou criar o onboarding", Toast.LENGTH_LONG);
@@ -136,7 +142,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
 
                         };
 
-                        LoqrOnBoarding onBoarding = new LoqrOnBoarding(context);
+                        onBoarding = new LoqrOnBoarding(context);
                         onBoarding.createProcess("+351", "912992454", customData, onboardingResult);
                     }
 
@@ -163,7 +169,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                             public void loqrResponse(int requestCode, String message, Boolean status) {
                             if (status) {
                                  message = "FUNCIONOU!!";
-                                    CreateOnboarding("joao.rodrigues@infosistema.com", "Joao Rodrigues");
+                                    
                             }
 
                             // Create the toast

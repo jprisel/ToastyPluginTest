@@ -16,6 +16,12 @@ ToastyPlugin.prototype.initLoqr = function(successCallback, errorCallback) {
   cordova.exec(successCallback, errorCallback, 'ToastyPlugin', 'initLoqr', [options]);
 }
 
+ToastyPlugin.prototype.initLoqr = function(successCallback, errorCallback) {
+  var options = {};
+  
+  cordova.exec(successCallback, errorCallback, 'ToastyPlugin', 'createOnboarding', [options]);
+}
+
 // Installation constructor that binds ToastyPlugin to window
 ToastyPlugin.install = function() {
   if (!window.plugins) {
