@@ -29,7 +29,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                 public class ToastyPlugin extends CordovaPlugin {
                   
                   private static final String DURATION_LONG = "long";
-                  private static final Context context = cordova.getActivity();
+                  private static Context context = cordova.getActivity();
                   
                     @Override
                   public boolean execute(String action, JSONArray args,
