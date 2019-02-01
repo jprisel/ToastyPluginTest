@@ -27,13 +27,15 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
 
 
                 public class ToastyPlugin extends CordovaPlugin {
-                  private static final String DURATION_LONG = "long";
                   
-                  @Override
+                  private static final String DURATION_LONG = "long";
+                  final Context context = cordova.getActivity();
+                  
+                    @Override
                   public boolean execute(String action, JSONArray args,
                     final CallbackContext callbackContext) {
 
-                      final Context context = cordova.getActivity();
+                      
                       String message;
                       String duration;
                      
@@ -68,7 +70,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                           }
                           else if(action.equals("initLoqr"))
                           {
-                              initLoqr(context);
+                              initLoqr();
                               
                           }
                           else {
@@ -136,7 +138,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                         toast.show();
                     }
 
-                    private static void initLoqr( Context context)
+                    private static void initLoqr()
                     {
                         //final Context cont = context;
                         // Create the toast
