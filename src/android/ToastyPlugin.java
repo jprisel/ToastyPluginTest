@@ -155,7 +155,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                             }
 
                             // Create the toast
-                        Toast toast2 = Toast.makeText(contextFinal, message, Toast.LENGTH_LONG);
+                        Toast toast2 = Toast.makeText(context, message, Toast.LENGTH_LONG);
                         toast2.show();
                          }
 
