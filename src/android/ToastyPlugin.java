@@ -38,6 +38,11 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                       context = cordova.getActivity();
                       String message;
                       String duration;
+                      
+                      Toast toast6 = Toast.makeText(context, "entrei na App",
+                        Toast.LENGTH_LONG);
+                       // Display toast
+                        toast6.show();
                      
                       try {
                         JSONObject options = args.getJSONObject(0);
@@ -62,6 +67,10 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
 
                     }
                       else {
+                          toast6 = Toast.makeText(context, action,
+                        Toast.LENGTH_LONG);
+                       // Display toast
+                        toast6.show();
                           
                           if(action.equals("show"))
                           {
