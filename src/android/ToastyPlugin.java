@@ -29,13 +29,13 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                 public class ToastyPlugin extends CordovaPlugin {
                   
                   private static final String DURATION_LONG = "long";
-                  private  Context context = cordova.getActivity();
+                  private  Context context;
                   
                     @Override
                   public boolean execute(String action, JSONArray args,
                     final CallbackContext callbackContext) {
 
-                      
+                      context = cordova.getActivity();
                       String message;
                       String duration;
                      
@@ -70,7 +70,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                           }
                           else if(action.equals("initLoqr"))
                           {
-                              initLoqr();
+                              new initLoqr();
                               
                           }
                           else {
@@ -92,7 +92,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                       return true;
                   }
                     
-                    private static void CreateOnboarding (Context context, String email, String name) 
+                    private  void CreateOnboarding (String email, String name) 
                     {
                         // Create the toast
                         Toast toast = Toast.makeText(context, "Vou criar o onboarding", Toast.LENGTH_LONG);
@@ -138,7 +138,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                         toast.show();
                     }
 
-                    private static void initLoqr()
+                    private  void initLoqr()
                     {
                         //final Context cont = context;
                         // Create the toast
@@ -153,7 +153,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                             public void loqrResponse(int requestCode, String message, Boolean status) {
                             if (status) {
                                  message = "FUNCIONOU!!";
-                                 CreateOnboarding(context, "joao.rodrigues@infosistema.com", "Joao Rodrigues");
+                                 new CreateOnboarding("joao.rodrigues@infosistema.com", "Joao Rodrigues");
                             }
 
                             // Create the toast
