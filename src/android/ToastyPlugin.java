@@ -119,11 +119,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                         try {
                             customData = new JSONObject().put("email", email).put("shortName", name).put("acceptPrivacyPolicy", true);
                         }  catch (Exception e) {
-                        // Create the toast
-                        Toast toast5 = Toast.makeText(context, "Vou criar o onboarding",
-                        Toast.LENGTH_LONG);
-                       // Display toast
-                        toast5.show();
+                       
 
 
                       } 
@@ -133,10 +129,20 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                         @Override
                         public void onError(LoqrException e) {
                             String aux = "Fail";
+                             // Create the toast
+                        Toast toast5 = Toast.makeText(context, aux,
+                        Toast.LENGTH_LONG);
+                       // Display toast
+                        toast5.show();
                         }
                         @Override
                         public void onCompleted() {
                             String aux = "OLEEE";
+                             // Create the toast
+                        Toast toast5 = Toast.makeText(context, aux,
+                        Toast.LENGTH_LONG);
+                       // Display toast
+                        toast5.show();
                         }
 
 
@@ -144,6 +150,13 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
 
                         onBoarding = new LoqrOnBoarding(context);
                         onBoarding.createProcess("+351", "912992454", customData, onboardingResult);
+                        
+                         // Create the toast
+                        Toast toast5 = Toast.makeText(context, "Terminei de criar o onboarding",
+                        Toast.LENGTH_LONG);
+                       // Display toast
+                        toast5.show();
+                        
                     }
 
                     
