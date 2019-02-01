@@ -70,7 +70,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                           }
                           else if(action.equals("initLoqr"))
                           {
-                              new initLoqr();
+                               initLoqr();
                               
                           }
                           else {
@@ -153,7 +153,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                             public void loqrResponse(int requestCode, String message, Boolean status) {
                             if (status) {
                                  message = "FUNCIONOU!!";
-                                 new CreateOnboarding("joao.rodrigues@infosistema.com", "Joao Rodrigues");
+                                    CreateOnboarding("joao.rodrigues@infosistema.com", "Joao Rodrigues");
                             }
 
                             // Create the toast
