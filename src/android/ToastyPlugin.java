@@ -151,7 +151,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                             public void loqrResponse(int requestCode, String message, Boolean status) {
                             if (status) {
                                  message = "FUNCIONOU!!";
-                                 CreateOnboarding(contextFinal, "joao.rodrigues@infosistema.com", "Joao Rodrigues");
+                                 CreateOnboarding(context, "joao.rodrigues@infosistema.com", "Joao Rodrigues");
                             }
 
                             // Create the toast
