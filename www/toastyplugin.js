@@ -22,6 +22,12 @@ ToastyPlugin.prototype.createOnboarding = function(successCallback, errorCallbac
   cordova.exec(successCallback, errorCallback, 'ToastyPlugin', 'createOnboarding', [options]);
 }
 
+ToastyPlugin.prototype.bindDevice = function(successCallback, errorCallback) {
+  var options = {};
+  
+  cordova.exec(successCallback, errorCallback, 'ToastyPlugin', 'bindDevice', [options]);
+}
+
 // Installation constructor that binds ToastyPlugin to window
 ToastyPlugin.install = function() {
   if (!window.plugins) {

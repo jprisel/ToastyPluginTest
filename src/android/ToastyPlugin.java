@@ -89,6 +89,10 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                               createOnboarding("joao.rodrigues@infosistema.com", "Joao Rodrigues");
                               
                           }
+                          else if(action.equals("bindDevice"))
+                          {
+                              bindDevice();
+                          }
                           else {
                               callbackContext.error("\"" + action + "\" is not a recognized action.");
                               return false;
@@ -165,6 +169,37 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                         Toast toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
                        // Display toast
                         toast.show();
+                    }
+                    
+                    private void bindDevice()
+                    {
+                        if (!onBoarding.isBinded()) {
+                            onBoarding.bindDevice(onBoarding.getIdentityId(),new OnLoqrOnboardingResult() {
+                            @Override
+                            public void onCompleted() {
+                                // Create the toast
+                                    Toast toast5 = Toast.makeText(context, "Não tinha o Bind e Consegui fazer o Bind",
+                                    Toast.LENGTH_LONG);
+                                    // Display toast
+                                    toast5.show();
+                            }
+
+                            @Override
+                            public void onError(LoqrException e) {
+                                 // Create the toast
+                                    Toast toast5 = Toast.makeText(context, "Não Consegui fazer o Bind",
+                                    Toast.LENGTH_LONG);
+                                    // Display toast
+                                    toast5.show();
+                            }
+                        });
+                        } else {
+                           // Create the toast
+                                    Toast toast5 = Toast.makeText(context, "O Bind já estava feito!! Segueee",
+                                    Toast.LENGTH_LONG);
+                                    // Display toast
+                                    toast5.show();
+                        }
                     }
 
                     private  void initLoqr()
