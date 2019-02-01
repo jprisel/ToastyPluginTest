@@ -44,14 +44,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                        // Display toast
                         toast6.show();
                      
-                      try {
-                        JSONObject options = args.getJSONObject(0);
-                        message = options.getString("message");
-                        duration = options.getString("duration");
-                      } catch (JSONException e) {
-                        callbackContext.error("Error encountered: " + e.getMessage());
-                        return false;
-                      }
+                     
 
                       if (!Loqr.permissionsChecked(cordova.getActivity())) {
                             // Create the toast
@@ -74,6 +67,14 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                           
                           if(action.equals("show"))
                           {
+                              try {
+                                JSONObject options = args.getJSONObject(0);
+                                message = options.getString("message");
+                                duration = options.getString("duration");
+                              } catch (JSONException e) {
+                                    callbackContext.error("Error encountered: " + e.getMessage());
+                                    return false;
+                              }
                               show(cordova.getActivity(), message,duration);
                              
                           }
