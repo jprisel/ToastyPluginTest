@@ -26,6 +26,22 @@ id="cordova-plugin-toastyplugin" version="0.0.1">
             <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         </config-file>
         
+        
+        
+        <config-file parent="application/activity" target="AndroidManifest.xml">
+            <activity android:label="webIntentFilter" android:name="com.mydomain.myapp">
+                <intent-filter>
+                    <action android:name="android.intent.action.VIEW" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                    <category android:name="android.intent.category.BROWSABLE" />
+                    <data android:host="loqr.io" android:pathPrefix="/demo" android:scheme="https" />
+                </intent-filter>
+            </activity>
+        </config-file>
+        
+        
+        
+        
         <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/stanleyidesis/cordova/plugin" />
         <framework src="src/android/loqr.gradle" custom="true" type="gradleReference" />
         <resource-file src="src/android/libs/LoqrCMSDK.aar" target="libs/LoqrCMSDK.aar" />
