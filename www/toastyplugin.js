@@ -28,6 +28,12 @@ ToastyPlugin.prototype.bindDevice = function(successCallback, errorCallback) {
   cordova.exec(successCallback, errorCallback, 'ToastyPlugin', 'bindDevice', [options]);
 }
 
+ToastyPlugin.prototype.validateMobileNumber = function(successCallback, errorCallback) {
+  var options = {};
+  
+  cordova.exec(successCallback, errorCallback, 'ToastyPlugin', 'validateMobileNumber', [options]);
+}
+
 // Installation constructor that binds ToastyPlugin to window
 ToastyPlugin.install = function() {
   if (!window.plugins) {

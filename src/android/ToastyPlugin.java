@@ -93,6 +93,10 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                           {
                               bindDevice();
                           }
+                          else if(action.equals("validateMobileNumber"))
+                          {
+                              validateMobileNumber();
+                          }
                           else {
                               callbackContext.error("\"" + action + "\" is not a recognized action.");
                               return false;
@@ -235,5 +239,28 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
 
                       }
 
+                    }
+                    
+                    private void validateMobileNumber()
+                    {
+                        onBoarding.validatePhoneRequest(new OnLoqrOnboardingResult() {
+                            @Override
+                            public void onCompleted() {
+                                 // Create the toast
+                                Toast toast = Toast.makeText(context, "enviei SMS", Toast.LENGTH_LONG);
+                                // Display toast
+                                toast.show();
+                                //SMS was sent with success
+                            }
+
+                            @Override
+                            public void onError(LoqrException e) {
+                                // Create the toast
+                                Toast toast = Toast.makeText(context, e.toString();, Toast.LENGTH_LONG);
+                                // Display toast
+                                toast.show();
+                                //Log.d(TAG, e.getErrorCode().getCode());
+                            }
+                        });
                     }
                 }
