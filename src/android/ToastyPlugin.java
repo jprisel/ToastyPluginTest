@@ -256,7 +256,7 @@ import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                             @Override
                             public void onError(LoqrException e) {
                                 // Create the toast
-                                Toast toast = Toast.makeText(context, e.toString();, Toast.LENGTH_LONG);
+                                Toast toast = Toast.makeText(context, e.toString(), Toast.LENGTH_LONG);
                                 // Display toast
                                 toast.show();
                                 //Log.d(TAG, e.getErrorCode().getCode());
