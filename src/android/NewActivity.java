@@ -2,6 +2,7 @@
 
     import android.app.Activity;
     import android.os.Bundle;
+    import android.content.Intent;
 
     // The native Toast API
     import android.widget.Toast;
