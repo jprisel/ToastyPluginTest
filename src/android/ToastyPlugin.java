@@ -17,7 +17,9 @@
                 import io.loqr.loqrOMSDK.LoqrOnBoarding;
                 import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
 
-
+                //activiy
+                import android.app.Activity;
+                import android.os.Bundle;
 
 
                 //Permissions
