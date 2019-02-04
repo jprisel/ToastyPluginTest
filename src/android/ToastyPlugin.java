@@ -19,6 +19,7 @@
                 import io.loqr.loqrCMSDK.error.LoqrException;
                 import io.loqr.loqrOMSDK.LoqrOnBoarding;
                 import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
+                import io.loqr.loqrOMSDK.utils.OnPhoneValidation;
 
                 //activiy
                 import android.app.Activity;
