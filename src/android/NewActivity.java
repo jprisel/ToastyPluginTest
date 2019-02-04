@@ -22,7 +22,7 @@
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             String package_name = getApplication().getPackageName();
-            setContentView(getApplication().getResources().getIdentifier("activity_new", "layout", package_name));
+            //setContentView(getApplication().getResources().getIdentifier("activity_new", "layout", package_name));
              // Create the toast
             Toast toast = Toast.makeText(this, "Estou no OnCreate", Toast.LENGTH_LONG);
             // Display toast
