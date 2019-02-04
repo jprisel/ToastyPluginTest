@@ -11,11 +11,11 @@
                 import org.json.JSONObject;
 
                 //The LOQR API
-import io.loqr.loqrCMSDK.Loqr;
-import io.loqr.loqrCMSDK.OnLoqrRequestListener;
-import io.loqr.loqrCMSDK.error.LoqrException;
-import io.loqr.loqrOMSDK.LoqrOnBoarding;
-import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
+                import io.loqr.loqrCMSDK.Loqr;
+                import io.loqr.loqrCMSDK.OnLoqrRequestListener;
+                import io.loqr.loqrCMSDK.error.LoqrException;
+                import io.loqr.loqrOMSDK.LoqrOnBoarding;
+                import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
 
 
 
