@@ -45,7 +45,7 @@
                 //new LoqrOnBoarding(this).validatePhone("http://loqr.io/demo", intent.getDataString(), new OnPhoneValidation());
                 Toast toast2 = Toast.makeText(this, "Tenho as confições todas e vou chamar o ValidateMobileNumberResponse", Toast.LENGTH_LONG);
                 // Display toast
-                toast2.show()
+                toast2.show();
                 plugin.validateMobileNumberResponse(intent.getDataString());
             }
         }
