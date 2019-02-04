@@ -29,7 +29,14 @@ id="cordova-plugin-toastyplugin" version="0.0.1">
         
         
         <config-file  target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:label="New Activity" android:name="com.stanleyidesis.cordova.plugin.NewActivity"></activity>
+            <activity android:label="New Activity" android:name="com.stanleyidesis.cordova.plugin.NewActivity">
+                <intent-filter>
+                    <action android:name="android.intent.action.VIEW" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                    <category android:name="android.intent.category.BROWSABLE" />
+                    <data android:host="loqr.io" android:pathPrefix="/demo" android:scheme="https" />
+                </intent-filter>
+            </activity>
         </config-file>
         
         
