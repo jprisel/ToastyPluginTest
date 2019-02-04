@@ -22,7 +22,7 @@
             String package_name = getApplication().getPackageName();
             setContentView(getApplication().getResources().getIdentifier("activity_new", "layout", package_name));
              // Create the toast
-            Toast toast = Toast.makeText(context, "Estou no OnCreate", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "Estou no OnCreate", Toast.LENGTH_LONG);
             // Display toast
             toast.show();
         }
@@ -32,7 +32,7 @@
         @Override
         public void onNewIntent(Intent intent) {
             super.onNewIntent(intent);
-             Toast toast = Toast.makeText(context, "Estou no OnNewIntent", Toast.LENGTH_LONG);
+             Toast toast = Toast.makeText(this, "Estou no OnNewIntent", Toast.LENGTH_LONG);
             // Display toast
             toast.show();
             if (intent.getAction() != null && intent.getAction().equals("android.intent.action.VIEW")) {
