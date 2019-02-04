@@ -257,7 +257,7 @@
                                 // Display toast
                                 toast.show();
                                 //SMS was sent with success
-                                openNewActivity();
+                                //openNewActivity();
                                 
                             }
 
