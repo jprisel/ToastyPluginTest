@@ -124,6 +124,11 @@
                       return true;
                   }
                     
+                    public static ToastyPlugin getInstance()
+                    {
+                        return toasty;
+                    }
+                    
                     private  void createOnboarding (String email, String name) 
                     {
                         // Create the toast

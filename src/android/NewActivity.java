@@ -1,5 +1,6 @@
     package com.stanleyidesis.cordova.plugin;
 
+    import com.com.stanleyidesis.cordova.plugin.ToastyPlugin;
     import android.app.Activity;
     import android.os.Bundle;
     import android.content.Intent;
@@ -37,6 +38,8 @@
              Toast toast = Toast.makeText(this, "Estou no OnNewIntent", Toast.LENGTH_LONG);
             // Display toast
             toast.show();
+            ToastyPlugin plugin = ToastyPlugin.getInstance();
+            
             if (intent.getAction() != null && intent.getAction().equals("android.intent.action.VIEW")) {
                 //Example on how to validate the mobile for onboarding cases
                 //new LoqrOnBoarding(this).validatePhone("http://loqr.io/demo", intent.getDataString(), new OnPhoneValidation());
