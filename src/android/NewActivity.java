@@ -15,6 +15,8 @@
     import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
 
     public class NewActivity extends Activity {
+        
+        
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
