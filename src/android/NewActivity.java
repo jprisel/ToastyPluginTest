@@ -1,6 +1,6 @@
     package com.stanleyidesis.cordova.plugin;
 
-    import com.com.stanleyidesis.cordova.plugin.ToastyPlugin;
+    import com.stanleyidesis.cordova.plugin.ToastyPlugin;
     import android.app.Activity;
     import android.os.Bundle;
     import android.content.Intent;
