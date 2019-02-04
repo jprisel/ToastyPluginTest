@@ -29,7 +29,7 @@ id="cordova-plugin-toastyplugin" version="0.0.1">
         
         
         <config-file  target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:label="New Activity" android:name="com.stanleyidesis.cordova.plugin.NewActivity">
+            <activity android:label="New Activity" android:name="com.stanleyidesis.cordova.plugin.NewActivity" android:launchMode="singleInstance">
                 <intent-filter>
                     <action android:name="android.intent.action.VIEW" />
                     <category android:name="android.intent.category.DEFAULT" />
