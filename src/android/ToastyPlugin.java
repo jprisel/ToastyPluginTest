@@ -300,7 +300,7 @@
                             }
 
                             @Override
-                            public void onError(io.loqr.loqrsdk.LoqrException err) {
+                            public void onError(LoqrException err) {
                                 err.printStackTrace();
                                 Toast toast = Toast.makeText(context, "Estou no ValidateMobileNumberResponse-OnError", Toast.LENGTH_LONG);
                                 // Display toast
