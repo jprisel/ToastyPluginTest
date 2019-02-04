@@ -31,6 +31,9 @@ public class NewActivity extends Activity {
     @Override
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
+         Toast toast = Toast.makeText(context, "Estou no OnNewIntent", Toast.LENGTH_LONG);
+        // Display toast
+        toast.show();
         if (intent.getAction() != null && intent.getAction().equals("android.intent.action.VIEW")) {
             //Example on how to validate the mobile for onboarding cases
             new LoqrOnBoarding(this).validatePhone("http://loqr.io/demo", intent.getDataString(), new OnPhoneValidation);

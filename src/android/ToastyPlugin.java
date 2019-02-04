@@ -251,6 +251,8 @@
                                 // Display toast
                                 toast.show();
                                 //SMS was sent with success
+                                openNewActivity();
+                                
                             }
 
                             @Override
@@ -262,5 +264,10 @@
                                 //Log.d(TAG, e.getErrorCode().getCode());
                             }
                         });
+                    }
+                    
+                    private void openNewActivity() {
+                        Intent intent = new Intent(context, NewActivity.class);
+                        this.cordova.getActivity().startActivity(intent);
                     }
                 }
