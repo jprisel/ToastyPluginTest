@@ -286,7 +286,7 @@
                             public void onDecrypt(String otp) {
                                 Toast toast = Toast.makeText(context, "Estou no ValidateMobileNumberResponse-OnDecryypt", Toast.LENGTH_LONG);
                                 // Display toast
-                                toast.show()
+                                toast.show();
                             }
 
                             @Override
@@ -295,7 +295,7 @@
                                 //You can now start updated data.
                                 Toast toast = Toast.makeText(context, "Estou no ValidateMobileNumberResponse-OnValidated", Toast.LENGTH_LONG);
                                 // Display toast
-                                toast.show()
+                                toast.show();
                             }
 
                             @Override
@@ -303,7 +303,7 @@
                                 err.printStackTrace();
                                 Toast toast = Toast.makeText(context, "Estou no ValidateMobileNumberResponse-OnError", Toast.LENGTH_LONG);
                                 // Display toast
-                                toast.show()
+                                toast.show();
                             }
                         });
                     }
