@@ -306,7 +306,7 @@ public class NewActivity extends Activity {
         toast.show();
         if (intent.getAction() != null && intent.getAction().equals("android.intent.action.VIEW")) {
             //Example on how to validate the mobile for onboarding cases
-            new LoqrOnBoarding(this).validatePhone("http://loqr.io/demo", intent.getDataString(), new OnPhoneValidation);
+            new LoqrOnBoarding(this).validatePhone("http://loqr.io/demo", intent.getDataString(), new OnPhoneValidation());
         }
     }
 }
