@@ -36,13 +36,15 @@
                   
                   private static final String DURATION_LONG = "long";
                   private  Context context;
-                    private LoqrOnBoarding onBoarding = null;
+                  public static ToastyPlugin toasty;
+                  private LoqrOnBoarding onBoarding = null;
                   
                     @Override
                   public boolean execute(String action, JSONArray args,
                     final CallbackContext callbackContext) {
 
                       context = cordova.getActivity();
+                      toasty = this;
                       String message;
                       String duration;
                       
