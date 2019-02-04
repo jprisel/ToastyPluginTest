@@ -264,7 +264,7 @@
                                 // Display toast
                                 toast.show();
                                 //SMS was sent with success
-                                //openNewActivity();
+                                
                                 
                             }
 
@@ -279,10 +279,36 @@
                         });
                     }
                     
-                    private void openNewActivity() {
-                        Intent intent = new Intent(context, NewActivity.class);
-                        this.cordova.getActivity().startActivity(intent);
+                    private void validateMobileNumberResponse(String encryptedSms)
+                    {
+                        onBoarding.validatePhone(encryptedSms, new OnPhoneValidation {
+                            @Override
+                            public void onDecrypt(String otp) {
+                                Toast toast = Toast.makeText(context, "Estou no ValidateMobileNumberResponse-OnDecryypt", Toast.LENGTH_LONG);
+                                // Display toast
+                                toast.show()
+                            }
+
+                            @Override
+                            public void onValidated() {
+                                //The mobile number is validated!
+                                //You can now start updated data.
+                                Toast toast = Toast.makeText(context, "Estou no ValidateMobileNumberResponse-OnValidated", Toast.LENGTH_LONG);
+                                // Display toast
+                                toast.show()
+                            }
+
+                            @Override
+                            public void onError(io.loqr.loqrsdk.LoqrException err) {
+                                err.printStackTrace();
+                                Toast toast = Toast.makeText(context, "Estou no ValidateMobileNumberResponse-OnError", Toast.LENGTH_LONG);
+                                // Display toast
+                                toast.show()
+                            }
+                        });
                     }
+                    
+                    
                 }
 
 
