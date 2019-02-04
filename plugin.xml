@@ -28,7 +28,7 @@ id="cordova-plugin-toastyplugin" version="0.0.1">
         
         
         
-        <config-file  target="AndroidManifest.xml" parent="/manifest">
+        <config-file  target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:label="New Activity" android:name="com.stanleyidesis.cordova.plugin.NewActivity"></activity>
         </config-file>
         
