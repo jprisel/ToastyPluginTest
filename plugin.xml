@@ -45,6 +45,8 @@ id="cordova-plugin-toastyplugin" version="0.0.1">
         <source-file src="src/android/ToastyPlugin.java" target-dir="src/com/stanleyidesis/cordova/plugin" />
         <source-file src="src/android/NewActivity.java" target-dir="src/com/stanleyidesis/cordova/plugin" />
         <framework src="src/android/loqr.gradle" custom="true" type="gradleReference" />
+        
+        <resource-file src="src/android/activity_new.xml" target="src/com/stanleyidesis/cordova/plugin" />
         <resource-file src="src/android/libs/LoqrCMSDK.aar" target="libs/LoqrCMSDK.aar" />
         <resource-file src="src/android/libs/LoqrOMSDK.aar" target="libs/LoqrOMSDK.aar" />
         <resource-file src="src/android/libs/LoqrDAMSDK.aar" target="libs/LoqrDAMSDK.aar" />
