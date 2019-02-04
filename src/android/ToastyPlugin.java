@@ -281,7 +281,7 @@
                     
                     private void validateMobileNumberResponse(String encryptedSms)
                     {
-                        onBoarding.validatePhone(encryptedSms, new OnPhoneValidation {
+                        onBoarding.validatePhone(encryptedSms, new OnPhoneValidation() {
                             @Override
                             public void onDecrypt(String otp) {
                                 Toast toast = Toast.makeText(context, "Estou no ValidateMobileNumberResponse-OnDecryypt", Toast.LENGTH_LONG);
