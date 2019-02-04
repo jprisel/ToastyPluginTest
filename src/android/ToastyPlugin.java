@@ -1,7 +1,7 @@
                 package com.stanleyidesis.cordova.plugin;
 
 
-                import com.stanleyidesis.cordova.plugin.NewActivity;
+                import NewActivity;
                 // The native Toast API
                 import android.widget.Toast;
                 import android.content.Context;
