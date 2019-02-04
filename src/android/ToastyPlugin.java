@@ -279,7 +279,7 @@
                         });
                     }
                     
-                    private void validateMobileNumberResponse(String encryptedSms)
+                    public void validateMobileNumberResponse(String encryptedSms)
                     {
                         onBoarding.validatePhone(encryptedSms, new OnPhoneValidation() {
                             @Override
