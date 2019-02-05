@@ -332,6 +332,7 @@
                         */
                         
                         String filename = "teste_filename";
+                        String folder = "InfosistemaFolder";
                         
                         int layoutID = context.getResources().getIdentifier("capture_test", "layout", context.getPackageName());
                         
@@ -346,7 +347,7 @@
                             @Override
                             public void onCameraCaptureCompleted(Bitmap bitmap) {
                                 //Log.d(TAG, "onCameraCaptureCompleted: got image");
-                                File file = DocumentUtils.saveCapturedImageFile(context, bitmap, filename, true); //Store the file on the mobile device's internal storage
+                                File file = DocumentUtils.saveCapturedImageFile(folder,context, bitmap, filename, true); //Store the file on the mobile device's internal storage
                                 //uploadImage(file) //Send the file to Loqr's platform
                             }
 
