@@ -338,11 +338,24 @@
                         final String filename = "teste_filename";
                         final String folder = "InfosistemaFolder";
                         
+                        Toast toast2 = Toast.makeText(context, "Estou no initCamera e vou buscar o layoutID", Toast.LENGTH_LONG);
+                                // Display toast
+                        toast2.show();
+                        
+                        
                         int layoutID = context.getResources().getIdentifier("capture_test", "layout", context.getPackageName());
                         
+                        toast2 = Toast.makeText(context, "LayourID é: "+layoutID, Toast.LENGTH_LONG);
+                        toast2.show();
+                        
                         FrameLayout frameLayout = (FrameLayout) ((Activity) context).findViewById(layoutID);
+                        toast2 = Toast.makeText(context, "já tenho frameLayout", Toast.LENGTH_LONG);
+                        toast2.show();
                         
                         try {
+                            
+                            toast2 = Toast.makeText(context, "estou no Try", Toast.LENGTH_LONG);
+                            toast2.show();
                             
                             LoqrCameraCapture.getInstance().initCamera(context, frameLayout , CaptureType.CARD, new CameraCaptureListener() {
                             @Override
@@ -376,6 +389,9 @@
                                 // Display toast
                             toast.show();
                         }
+                        
+                        toast2 = Toast.makeText(context, "Terminei o initCamera", Toast.LENGTH_LONG);
+                        toast2.show();
                         
                         
                     }
