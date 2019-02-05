@@ -329,6 +329,9 @@
                         * CaptureType.CARD
                         * CaptureType.SELFIE
                         */
+                        
+                        int layoutID = getResources.getIdentifier("capture_test", "layout", getPackageName()));
+                        /*
                         LoqrCameraCapture.getInstance().initCamera(context, (FrameLayout) findViewById(R.id.capture_test), CaptureType.CARD, new CameraCaptureListener() {
                             @Override
                             public void onCameraCaptureStarted() {
@@ -346,7 +349,7 @@
                             public void onError(LoqrException e) {
                                 //Log.e(TAG, "onError: " + e.toString());
                             }
-                        });
+                        });*/
                     }
                     
                     
