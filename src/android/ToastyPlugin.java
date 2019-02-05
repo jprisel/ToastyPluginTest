@@ -338,14 +338,23 @@
                         
                         FrameLayout frameLayout = (FrameLayout) ((Activity) context).findViewById(layoutID);
                         
-                        LoqrCameraCapture.getInstance().initCamera(context, frameLayout , CaptureType.CARD, new CameraCaptureListener() {
+                        try {
+                            
+                            LoqrCameraCapture.getInstance().initCamera(context, frameLayout , CaptureType.CARD, new CameraCaptureListener() {
                             @Override
                             public void onCameraCaptureStarted() {
-                                //The users has clicked the capture button
+                                Toast toast = Toast.makeText(context, "Estou no onCameraCaptureStarted", Toast.LENGTH_LONG);
+                                // Display toast
+                                toast.show();
                             }
 
                             @Override
                             public void onCameraCaptureCompleted(Bitmap bitmap) {
+                                Toast toast = Toast.makeText(context, "Estou no onCameraCaptureCompleted", Toast.LENGTH_LONG);
+                                // Display toast
+                                toast.show();
+                                
+                                
                                 //Log.d(TAG, "onCameraCaptureCompleted: got image");
                                 File file = DocumentUtils.saveCapturedImageFile(folder,context, bitmap, filename, true); //Store the file on the mobile device's internal storage
                                 //uploadImage(file) //Send the file to Loqr's platform
@@ -356,6 +365,15 @@
                                 //Log.e(TAG, "onError: " + e.toString());
                             }
                         });
+                            
+                        } catch(LoqrException e)
+                        {
+                            Toast toast = Toast.makeText(context, "Estou no catch do InitCamera", Toast.LENGTH_LONG);
+                                // Display toast
+                            toast.show();
+                        }
+                        
+                        
                     }
                     
                     
