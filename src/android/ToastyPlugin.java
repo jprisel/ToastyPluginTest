@@ -71,7 +71,7 @@
                        // Display toast
                         toast6.show();
                       
-                      if(activiy == null)
+                      if(activity == null)
                       {
                           toast6 = Toast.makeText(context, "Activity is null",
                         Toast.LENGTH_LONG);
