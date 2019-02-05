@@ -37,6 +37,7 @@
                 import android.content.Context;
                 import android.graphics.Bitmap;
                 import java.io.File;
+                import android.widget.FrameLayout;
 
 
                 //Permissions
