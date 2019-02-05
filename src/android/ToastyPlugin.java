@@ -53,12 +53,14 @@
                   private  Context context;
                   public static ToastyPlugin toasty;
                   private LoqrOnBoarding onBoarding = null;
+                  private CordovaActivity activity;
                   
                     @Override
                   public boolean execute(String action, JSONArray args,
                     final CallbackContext callbackContext) {
 
                       context = cordova.getActivity();
+                      activity = (CordovaActivity) cordova.getActivity();
                       toasty = this;
                       String message;
                       String duration;
@@ -67,8 +69,23 @@
                         Toast.LENGTH_LONG);
                        // Display toast
                         toast6.show();
+                      
+                      if(activiy == null)
+                      {
+                          toast6 = Toast.makeText(context, "Activity is null",
+                        Toast.LENGTH_LONG);
+                       // Display toast
+                        toast6.show();
+                      }
+                      else {
+                          toast6 = Toast.makeText(context, "Activity não é null, yes!",
+                        Toast.LENGTH_SHORT);
+                       // Display toast
+                        toast6.show();
+                      }
                      
                      
+                      
 
                       if (!Loqr.permissionsChecked(cordova.getActivity())) {
                             // Create the toast
