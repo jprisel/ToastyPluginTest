@@ -332,7 +332,7 @@
                         */
                         
                         String filename = "teste_filename";
-                        String folder = "InfosistemaFolder";
+                        final String folder = "InfosistemaFolder";
                         
                         int layoutID = context.getResources().getIdentifier("capture_test", "layout", context.getPackageName());
                         
