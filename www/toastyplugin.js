@@ -34,6 +34,12 @@ ToastyPlugin.prototype.validateMobileNumber = function(successCallback, errorCal
   cordova.exec(successCallback, errorCallback, 'ToastyPlugin', 'validateMobileNumber', [options]);
 }
 
+ToastyPlugin.prototype.initCamera = function(successCallback, errorCallback) {
+  var options = {};
+  
+  cordova.exec(successCallback, errorCallback, 'ToastyPlugin', 'initCamera', [options]);
+}
+
 // Installation constructor that binds ToastyPlugin to window
 ToastyPlugin.install = function() {
   if (!window.plugins) {

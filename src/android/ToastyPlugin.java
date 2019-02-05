@@ -120,6 +120,10 @@
                           {
                               validateMobileNumber();
                           }
+                          else if(action.equals("initCamera"))
+                          {
+                              initCamera();
+                          }
                           else {
                               callbackContext.error("\"" + action + "\" is not a recognized action.");
                               return false;
