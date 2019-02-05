@@ -333,7 +333,7 @@
                         String filename = "teste_filename";
                         
                         int layoutID = context.getResources().getIdentifier("capture_test", "layout", context.getPackageName());
-                        Framelayout frameLayout = (FrameLayout) this.findViewById(layoutID);
+                        FrameLayout frameLayout = (FrameLayout) this.findViewById(layoutID);
                         
                         LoqrCameraCapture.getInstance().initCamera(context, frameLayout , CaptureType.CARD, new CameraCaptureListener() {
                             @Override
