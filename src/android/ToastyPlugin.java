@@ -331,8 +331,8 @@
                         */
                         
                         int layoutID = context.getResources().getIdentifier("capture_test", "layout", context.getPackageName());
-                        /*
-                        LoqrCameraCapture.getInstance().initCamera(context, (FrameLayout) findViewById(R.id.capture_test), CaptureType.CARD, new CameraCaptureListener() {
+                        
+                        LoqrCameraCapture.getInstance().initCamera(context, (FrameLayout) findViewById(layoutID), CaptureType.CARD, new CameraCaptureListener() {
                             @Override
                             public void onCameraCaptureStarted() {
                                 //The users has clicked the capture button
@@ -349,7 +349,7 @@
                             public void onError(LoqrException e) {
                                 //Log.e(TAG, "onError: " + e.toString());
                             }
-                        });*/
+                        });
                     }
                     
                     
