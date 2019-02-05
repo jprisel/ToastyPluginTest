@@ -1,10 +1,15 @@
                 package com.stanleyidesis.cordova.plugin;
 
 
-                //import NewActivity;
+                
                 // The native Toast API
                 import android.widget.Toast;
-                import android.content.Context;
+                
+
+                
+                
+
+
                 // Cordova-required packages
                 import org.apache.cordova.CallbackContext;
                 import org.apache.cordova.CordovaPlugin;
@@ -20,11 +25,18 @@
                 import io.loqr.loqrOMSDK.LoqrOnBoarding;
                 import io.loqr.loqrOMSDK.utils.OnLoqrOnboardingResult;
                 import io.loqr.loqrOMSDK.utils.OnPhoneValidation;
+                import io.loqr.loqrDAMSDK.camera.LoqrCameraCapture;
+                import io.loqr.loqrDAMSDK.camera.CameraCaptureListener;
+                import io.loqr.loqrDAMSDK.documentcapture.DocumentUtils;
+                import io.loqr.loqrDAMSDK.camera.CaptureType;
 
-                //activiy
+                //Android components
                 import android.app.Activity;
                 import android.os.Bundle;
                 import android.content.Intent;
+                import android.content.Context;
+                import android.graphics.Bitmap;
+                import.java.io.File;
 
 
                 //Permissions
@@ -305,6 +317,33 @@
                                 Toast toast = Toast.makeText(context, "Estou no ValidateMobileNumberResponse-OnError", Toast.LENGTH_LONG);
                                 // Display toast
                                 toast.show();
+                            }
+                        });
+                    }
+                    
+                    public void initCamera()
+                    {
+                        /**
+                        * CaptureType.DOCUMENT_FILE
+                        * CaptureType.CARD
+                        * CaptureType.SELFIE
+                        */
+                        LoqrCameraCapture.getInstance().initCamera(context, (FrameLayout) findViewById(R.id.capture_test), CaptureType.CARD, new CameraCaptureListener() {
+                            @Override
+                            public void onCameraCaptureStarted() {
+                                //The users has clicked the capture button
+                            }
+
+                            @Override
+                            public void onCameraCaptureCompleted(Bitmap bitmap) {
+                                //Log.d(TAG, "onCameraCaptureCompleted: got image");
+                                File file = DocumentUtils.saveCapturedImageFile(context, bitmap, fileName, true); //Store the file on the mobile device's internal storage
+                                //uploadImage(file) //Send the file to Loqr's platform
+                            }
+
+                            @Override
+                            public void onError(LoqrException e) {
+                                //Log.e(TAG, "onError: " + e.toString());
                             }
                         });
                     }
