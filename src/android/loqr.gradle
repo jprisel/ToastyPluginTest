@@ -19,6 +19,7 @@ dependencies {
     }
     compile(name:'LoqrCMSDK', ext:'aar')
     compile(name:'LoqrOMSDK', ext:'aar')
+    compile(name:'LoqrDAMSDK', ext:'aar')
 
 }
 
