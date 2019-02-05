@@ -330,6 +330,8 @@
                         * CaptureType.SELFIE
                         */
                         
+                        String filename = "teste_filename";
+                        
                         int layoutID = context.getResources().getIdentifier("capture_test", "layout", context.getPackageName());
                         
                         LoqrCameraCapture.getInstance().initCamera(context, (FrameLayout) findViewById(layoutID), CaptureType.CARD, new CameraCaptureListener() {
