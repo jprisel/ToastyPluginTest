@@ -331,7 +331,7 @@
                         * CaptureType.SELFIE
                         */
                         
-                        String filename = "teste_filename";
+                        final String filename = "teste_filename";
                         final String folder = "InfosistemaFolder";
                         
                         int layoutID = context.getResources().getIdentifier("capture_test", "layout", context.getPackageName());
