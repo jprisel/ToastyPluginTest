@@ -343,7 +343,7 @@
                             @Override
                             public void onCameraCaptureCompleted(Bitmap bitmap) {
                                 //Log.d(TAG, "onCameraCaptureCompleted: got image");
-                                File file = DocumentUtils.saveCapturedImageFile(context, bitmap, fileName, true); //Store the file on the mobile device's internal storage
+                                File file = DocumentUtils.saveCapturedImageFile(context, bitmap, filename, true); //Store the file on the mobile device's internal storage
                                 //uploadImage(file) //Send the file to Loqr's platform
                             }
 
