@@ -366,9 +366,20 @@
                         toast2 = Toast.makeText(context, "LayourID é: "+layoutID, Toast.LENGTH_LONG);
                         toast2.show();
                         
-                        FrameLayout frameLayout = (FrameLayout) ((Activity) context).findViewById(layoutID);
-                        toast2 = Toast.makeText(context, "já tenho frameLayout", Toast.LENGTH_LONG);
+                        FrameLayout frameLayout = (FrameLayout) activity.findViewById(layoutID);
+                        
+                        if(frameLayout == null)
+                        {
+                            toast2 = Toast.makeText(context, "framelayout é null porra!", Toast.LENGTH_LONG);
+                            toast2.show();
+                        }
+                        else {
+                            toast2 = Toast.makeText(context, "já tenho frameLayout!!!", Toast.LENGTH_LONG);
                         toast2.show();
+                        }
+                        
+                        
+                        
                         
                         try {
                             
