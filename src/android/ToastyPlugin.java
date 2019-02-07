@@ -57,6 +57,7 @@
                   private LoqrOnBoarding onBoarding = null;
                   private CordovaActivity activity;
                   private FrameLayout frameLayout;
+                  private FrameLayout.LayoutParams fullView;
                   
                     @Override
                   public boolean execute(String action, JSONArray args,
@@ -388,7 +389,7 @@
                         
                         frameLayout = new FrameLayout(context);
 
-                        FrameLayout.LayoutParams fullView = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
+                        fullView = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
                         frameLayout.setLayoutParams(fullView);
                         
                         
