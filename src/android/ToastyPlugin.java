@@ -384,7 +384,7 @@
                         
                         */
                         
-                        FrameLayout frameLayout = new FrameLayout(getApplicationContext());
+                        FrameLayout frameLayout = new FrameLayout(context);
 
                         FrameLayout.LayoutParams fullView = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
                         frameLayout.setLayoutParams(fullView);
