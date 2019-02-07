@@ -428,7 +428,7 @@
                             toast.show();
                         }
                         
-                        context.addContentView(frameLayout, fullView);
+                        activity.addContentView(frameLayout, fullView);
                         
                         toast2 = Toast.makeText(context, "Terminei o initCamera", Toast.LENGTH_LONG);
                         toast2.show();
