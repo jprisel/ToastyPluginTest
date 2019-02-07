@@ -56,6 +56,7 @@
                   public static ToastyPlugin toasty;
                   private LoqrOnBoarding onBoarding = null;
                   private CordovaActivity activity;
+                  private FrameLayout frameLayout;
                   
                     @Override
                   public boolean execute(String action, JSONArray args,
@@ -385,7 +386,7 @@
                         
                         */
                         
-                        FrameLayout frameLayout = new FrameLayout(context);
+                        frameLayout = new FrameLayout(context);
 
                         FrameLayout.LayoutParams fullView = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
                         frameLayout.setLayoutParams(fullView);
