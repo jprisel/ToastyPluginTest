@@ -33,6 +33,7 @@
 
                 //Android components
                 import android.app.Activity;
+                import android.os.Looper;
                 import android.os.Bundle;
                 import android.content.Intent;
                 import android.content.Context;
@@ -428,7 +429,22 @@
                             toast.show();
                         }
                         
-                        activity.addContentView(frameLayout, fullView);
+                        new android.os.Handler(Looper.getMainLooper()).post(new Runnable() {
+                            @Override
+                            public void run() {
+                                // no teu caso, em vez de this devia de ser provavelmente o cordovoa.getActivity()
+                                activity.addContentView(frameLayout, fullView);
+                            }
+                        });
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        //activity.addContentView(frameLayout, fullView);
                         
                         toast2 = Toast.makeText(context, "Terminei o initCamera", Toast.LENGTH_LONG);
                         toast2.show();
