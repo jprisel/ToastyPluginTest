@@ -283,8 +283,9 @@
                         0); //use a unique code to distinguish the request results
                       }
                       catch (Exception e) {
-                         // Display toast
+                        Toast toast = Toast.makeText(context, e.toString(), Toast.LENGTH_LONG);
                         toast.show();
+                       
 
 
                       }
