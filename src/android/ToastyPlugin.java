@@ -361,12 +361,16 @@
                         toast2.show();
                         
                         
-                        int layoutID = context.getResources().getIdentifier("capture_test", "layout", context.getPackageName());
+                        /*int layoutID = context.getResources().getIdentifier("capture_test", "layout", context.getPackageName());
                         
                         toast2 = Toast.makeText(context, "LayourID é: "+layoutID, Toast.LENGTH_LONG);
                         toast2.show();
                         
                         FrameLayout frameLayout = (FrameLayout) activity.findViewById(layoutID);
+                        
+                       
+                        
+                        
                         
                         if(frameLayout == null)
                         {
@@ -378,7 +382,12 @@
                         toast2.show();
                         }
                         
+                        */
                         
+                        FrameLayout frameLayout = new FrameLayout(getApplicationContext());
+
+                        FrameLayout.LayoutParams fullView = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT);
+                        frameLayout.setLayoutParams(fullView);
                         
                         
                         try {
@@ -418,6 +427,8 @@
                                 // Display toast
                             toast.show();
                         }
+                        
+                        context.addContentView(frameLayout, fullView);
                         
                         toast2 = Toast.makeText(context, "Terminei o initCamera", Toast.LENGTH_LONG);
                         toast2.show();
