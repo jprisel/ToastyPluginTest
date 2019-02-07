@@ -99,7 +99,8 @@
                         toast3.show();
                           ActivityCompat.requestPermissions(cordova.getActivity(),
                                 new String[]{Manifest.permission.READ_PHONE_STATE,
-                                        Manifest.permission.ACCESS_FINE_LOCATION},
+                                        Manifest.permission.ACCESS_FINE_LOCATION,
+                                            Manifest.permission.CAMERA},
                                 27 //use a unique code to distinguish the request results
                         );
 
@@ -261,11 +262,7 @@
 
                     private  void initLoqr()
                     {
-                        //final Context cont = context;
-                        // Create the toast
-                        Toast toast = Toast.makeText(context, "Vou tentar chamar o Loqr", Toast.LENGTH_LONG);
-                       // Display toast
-                        toast.show();
+                        
 
                       try {
                           new Loqr(context).initLoqr("LOQR_DEMO_ID", "LOQR_DEMO_KEY", "OLA", new OnLoqrRequestListener() {
